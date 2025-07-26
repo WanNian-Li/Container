@@ -1,11 +1,11 @@
 import os
 import re
 import matplotlib.pyplot as plt
-
+#=========修改集装箱参数和模型=========#
 stack = 9
-
 tier  = 4
 model = "CNN"
+#=====================================#
 # 读取文件并解析成浮点数列表
 def read_tensor_file(filename):
     with open(filename, 'r', encoding='utf-8') as f:
