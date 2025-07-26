@@ -1,5 +1,11 @@
 import pickle
-with open('dataset/10-4-2custom_dataset_train.pkl', 'rb') as f:
+#==============修改需要读取的数据集参数==============#
+stack = 7
+tier  = 5
+n     = 3
+#===================================================#
+total_num = stack * tier - 1
+with open(f'dataset/{stack}-{tier}-{total_num}/{stack}-{tier}-{n}custom_dataset_train.pkl', 'rb') as f:
     dataset = pickle.load(f)
 
 print(f"样本总数为：{len(dataset)}")
