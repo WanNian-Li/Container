@@ -7,11 +7,18 @@ tier  = 4
 model = "CNN"
 #=====================================#
 # 读取文件并解析成浮点数列表
-def read_tensor_file(filename):
+def read_file(filename):
     with open(filename, 'r', encoding='utf-8') as f:
         content = f.read()
     # 匹配所有浮点数
     numbers = re.findall(r"[-+]?\d*\.\d+|\d+", content)
+    return [float(x) for x in numbers]
+    
+def read_tensor_file(filename):
+    with open(filename, 'r', encoding='utf-8') as f:
+        content = f.read()
+    # 只匹配 tensor( 里面的第一个数字
+    numbers = re.findall(r"tensor\(([-+]?\d*\.\d+|\d+)", content)
     return [float(x) for x in numbers]
 
 # 四个文件路径
@@ -22,10 +29,13 @@ file_loss = f"result/{stack}-{tier}-{model}/{stack}-{tier}test_loss.txt"
 
 # 读取数据
 acc1 = read_tensor_file(file_acc1)
+print(len(acc1))
 acc2 = read_tensor_file(file_acc2)
-mae = read_tensor_file(file_mae)
-loss = read_tensor_file(file_loss)
-
+print(len(acc2))
+mae = read_file(file_mae)
+print(len(mae))
+loss = read_file(file_loss)
+print(len(loss))
 # 绘图
 fig, axs = plt.subplots(2, 2, figsize=(10, 8))
 
