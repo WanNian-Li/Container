@@ -9,7 +9,7 @@
 ### model文件夹
 
 * Module.py是可自适应集装箱形状的模型文件，里面包含了CNN和LSTM两个模型
-* CNN76.py、CNN104.py、LSTM76.py、LSTM104.py是过去的模型文件，每一个.py只能适应一种集装箱形状
+* CNN76.py、CNN104.py、LSTM76.py、LSTM104.py是过去的模型文件，每一个.py只能适应一种集装箱形状，现在不再使用这些模型
 
 ### fig文件夹
 
