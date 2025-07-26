@@ -179,7 +179,7 @@ def generate21_optimized(stacks, tiers, totalnumber):
     origin = np.zeros((stacks, tiers), dtype=int)
 
     # 生成并打乱优先级列表
-    numbers = list(range(1, totalnumber + 1))
+    numbers = [i+1 for i in range(totalnumber)]
     random.shuffle(numbers)
 
     # 预先计算每个堆的当前高度
